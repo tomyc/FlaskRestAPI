@@ -13,9 +13,9 @@ app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///data.db'
 app.secret_key = 'klucz' #jakis długi klucz
 api = Api(app)
 
-@app.before_first_request
-def create_tables():
-    db.create_all()
+# @app.before_first_request # przeniesione do run.py
+# def create_tables():
+#     db.create_all()
 
 jwt = JWT(app, authenticate, identity) #nowy endpoint: /auth - bedzie zwracany JWT token, który jest przesyłany do funkcji, która weryfikuje autoryzacje użytkownika
 
