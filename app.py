@@ -11,7 +11,7 @@ from resources.user import UserRegister
 
 app = Flask(__name__)
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
-app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('DATABASE_URL')  #'sqlite:///data.db' - #przypisanie zmiennnej z Heroku o lokalizacji bazy
+app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('DATABASE_URL', 'sqlite:///data.db') - #przypisanie zmiennnej z Heroku o lokalizacji bazy
 app.secret_key = 'klucz' #jakis długi klucz
 api = Api(app)
 
