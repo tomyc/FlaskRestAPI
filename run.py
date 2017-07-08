@@ -1,7 +1,7 @@
 from app import app
 from db import db
 
-dc.init_app(app)
+db.init_app(app)
 
 
 @app.before_first_request # przeniesione z app.py
